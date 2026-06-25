@@ -3,7 +3,7 @@ import json
 import random
 import string
 from datetime import datetime, timedelta
-from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 from langchain_core.messages import HumanMessage, AIMessage, BaseMessage
 from langchain_core.tools import tool
 from langgraph.prebuilt import create_react_agent
@@ -98,7 +98,7 @@ def generate_sample_users(
 
 TOOLS = [write_json, read_json, generate_sample_users]
 
-llm = ChatOpenAI(model="gpt-4", temperature=0)
+llm = ChatOllama(model="llama3.2:latest", temperature=0)
 
 SYSTEM_MESSAGE = (
     "You are DataGen, a helpful assistant that generates sample data for applications. "
