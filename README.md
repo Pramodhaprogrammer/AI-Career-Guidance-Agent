@@ -1,22 +1,19 @@
 # AI Career Guidance Agent
 
-## Overview
-
-AI Career Guidance Agent is an AI-powered assistant built using Python, LangChain, Ollama, and Qwen 2.5.
-
-The agent analyzes a student's existing skills, recommends the most suitable career path, identifies missing skills, generates a personalized learning roadmap, suggests portfolio projects, and provides interview preparation tips.
+An AI-powered Career Guidance Agent built using **Python**, **LangChain**, **Ollama**, and **Qwen2.5**. The agent analyzes a student's skills, identifies missing skills, recommends the most suitable career path, suggests projects, generates a learning roadmap, and provides interview preparation tips.
 
 ---
 
 ## Features
 
-- Career Role Recommendation
 - Skill Gap Analysis
-- Personalized Learning Roadmap
-- Project Recommendations
+- Career Role Recommendation
+- Learning Roadmap Generation
 - Interview Preparation Tips
+- Project Recommendations
 - Conversation Memory
-- Fast Local AI using Ollama
+- Runs Locally using Ollama
+- Powered by Qwen2.5-7B
 
 ---
 
@@ -25,94 +22,110 @@ The agent analyzes a student's existing skills, recommends the most suitable car
 - Python
 - LangChain
 - Ollama
-- Qwen 2.5 (7B)
+- Qwen2.5-7B
+- VS Code
 
 ---
 
-## Project Workflow
-
-Student Skills
-↓
-Career Recommendation
-↓
-Skill Gap Analysis
-↓
-Project Suggestions
-↓
-Learning Roadmap
-↓
-Interview Preparation Tips
-
----
-
-## Example
-
-### Input
+## Project Structure
 
 ```
+AI-Career-Guidance-Agent/
+│
+├── Agent.py
+├── README.md
+├── pyproject.toml
+├── main.py
+└── .gitignore
+```
+
+---
+
+## How It Works
+
+1. Student enters their skills.
+2. AI analyzes existing skills.
+3. Identifies missing skills.
+4. Recommends the best career role.
+5. Suggests exactly 3 projects.
+6. Generates a learning roadmap.
+7. Provides interview preparation tips.
+
+---
+
+## Example Input
+
+```
+Student:
 My skills are Python, SQL and Power BI.
 I want to become a Data Scientist.
 ```
 
-### Output
+---
+
+## Example Output
 
 ```
 Recommended Role:
 Data Scientist
 
-Current Skills
-• Python
-• SQL
-• Power BI
+Current Skills:
+- Python
+- SQL
+- Power BI
 
-Missing Skills
-• Statistics
-• Machine Learning
-• Pandas
-• NumPy
-• Scikit-Learn
+Missing Skills:
+- Statistics
+- Machine Learning
+- Scikit-Learn
+- Deep Learning
+- Model Deployment
 
-Suggested Projects
-• AI Career Guidance Agent
-• Retail Sales Forecasting
-• Fraud Detection System
+Suggested Projects:
+1. Loan Risk Prediction
+2. Customer Churn Prediction
+3. Recommendation System
 
-Learning Roadmap
-• Learn Statistics
-• Learn Machine Learning
-• Practice Pandas & NumPy
-• Build Projects
-• Deploy ML Models
+Learning Roadmap:
+- Learn Statistics
+- Learn Machine Learning
+- Practice Pandas & NumPy
+- Build ML Projects
+- Deploy Models
 
-Interview Tips
-• Practice SQL
-• Revise Python
-• Solve ML Interview Questions
+Interview Tips:
+- Practice SQL
+- Revise Machine Learning Concepts
+- Build Real-world Projects
 ```
 
 ---
 
-## How to Run
+## Screenshots
 
-Clone the repository
+### Career Recommendation
+
+(Add Screenshot 1 here)
+
+### Data Scientist Roadmap
+
+(Add Screenshot 2 here)
+
+### Project Suggestions
+
+(Add Screenshot 3 here)
+
+---
+
+## Run the Project
+
+Install Ollama and pull the model:
 
 ```bash
-git clone https://github.com/Pramodhaprogrammer/AI-Career-Guidance-Agent.git
+ollama pull qwen2.5:7b
 ```
 
-Move into the project
-
-```bash
-cd AI-Career-Guidance-Agent
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the project
+Run the project:
 
 ```bash
 python Agent.py
@@ -122,12 +135,13 @@ python Agent.py
 
 ## Future Improvements
 
-- Resume Analysis
-- ATS Score Prediction
+- Streamlit Web Interface
+- Resume Analyzer
 - Job Recommendation
-- Resume Builder
 - Course Recommendation
-- Web Interface using Streamlit
+- PDF Report Generation
+- Vector Database Integration
+- RAG-based Career Guidance
 
 ---
 
@@ -137,9 +151,3 @@ python Agent.py
 
 GitHub:
 https://github.com/Pramodhaprogrammer
-
----
-
-## License
-
-This project is created for learning and portfolio purposes.
