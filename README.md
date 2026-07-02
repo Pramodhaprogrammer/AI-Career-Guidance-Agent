@@ -103,27 +103,19 @@ Interview Preparation Tips
 
 # Screenshots
 
-## 1. Career Recommendation
+## Screenshots
 
-> Insert Screenshot 1 here
+### 1. Career Recommendation
 
-![Career Recommendation](images/career_recommendation.png)
+![Career Recommendation](images/career_recommendation.jpeg)
 
----
+### 2. AI Engineer Skill Gap Analysis
 
-## 2. AI Engineer Skill Gap Analysis
+![AI Engineer Skill Gap Analysis](images/skill_gap_analysis.jpeg)
 
-> Insert Screenshot 2 here
+### 3. Project Recommendations
 
-![Skill Gap Analysis](images/skill_gap_analysis.png)
-
----
-
-## 3. Project Recommendations
-
-> Insert Screenshot 3 here
-
-![Project Suggestions](images/project_recommendations.png)
+![Project Recommendations](images/project_recommendations.jpeg)
 
 ---
 
