@@ -1,6 +1,6 @@
 # AI Career Guidance Agent
 
-An AI-powered Career Guidance Agent built using **Python**, **LangChain**, **Ollama**, and **Qwen2.5**. The agent analyzes a student's skills, identifies missing skills, recommends the most suitable career path, suggests projects, generates a learning roadmap, and provides interview preparation tips.
+An AI-powered Career Guidance Agent built using **Python**, **LangChain**, **Ollama**, and **Qwen2.5-7B**. It analyzes a student's existing skills, identifies skill gaps, recommends the most suitable career path, suggests portfolio projects, generates a personalized learning roadmap, and provides interview preparation tips.
 
 ---
 
@@ -8,11 +8,11 @@ An AI-powered Career Guidance Agent built using **Python**, **LangChain**, **Oll
 
 - Skill Gap Analysis
 - Career Role Recommendation
-- Learning Roadmap Generation
+- Personalized Learning Roadmap
 - Interview Preparation Tips
-- Project Recommendations
+- Real-world Project Recommendations
 - Conversation Memory
-- Runs Locally using Ollama
+- Local LLM using Ollama
 - Powered by Qwen2.5-7B
 
 ---
@@ -29,7 +29,7 @@ An AI-powered Career Guidance Agent built using **Python**, **LangChain**, **Oll
 
 ## Project Structure
 
-```
+```text
 AI-Career-Guidance-Agent/
 │
 ├── Agent.py
@@ -43,89 +43,111 @@ AI-Career-Guidance-Agent/
 
 ## How It Works
 
-1. Student enters their skills.
-2. AI analyzes existing skills.
-3. Identifies missing skills.
-4. Recommends the best career role.
-5. Suggests exactly 3 projects.
-6. Generates a learning roadmap.
-7. Provides interview preparation tips.
+1. Student enters their skills or career goal.
+2. AI analyzes the current skill set.
+3. Missing skills are identified.
+4. The best career role is recommended.
+5. Three real-world portfolio projects are suggested.
+6. A personalized learning roadmap is generated.
+7. Interview preparation tips are provided.
 
 ---
 
 ## Example Input
 
-```
+```text
 Student:
-My skills are Python, SQL and Power BI.
-I want to become a Data Scientist.
+My skills are Python, SQL, Power BI, Pandas, and NumPy.
+Which career suits me?
 ```
 
 ---
 
 ## Example Output
 
-```
-Recommended Role:
-Data Scientist
+```text
+Recommended Role
+Data Analyst
 
-Current Skills:
-- Python
-- SQL
-- Power BI
+Current Skills
+• Python
+• SQL
+• Power BI
+• Pandas
+• NumPy
 
-Missing Skills:
-- Statistics
-- Machine Learning
-- Scikit-Learn
-- Deep Learning
-- Model Deployment
+Missing Skills
+• Statistics
+• Scikit-Learn
+• Machine Learning
 
-Suggested Projects:
-1. Loan Risk Prediction
-2. Customer Churn Prediction
-3. Recommendation System
+Suggested Projects
+1. Sales Forecasting Model
+2. Fraud Detection System
+3. Customer Churn Analysis
 
-Learning Roadmap:
-- Learn Statistics
-- Learn Machine Learning
-- Practice Pandas & NumPy
-- Build ML Projects
-- Deploy Models
+Learning Roadmap
+1. Learn Statistics
+2. Study Scikit-Learn
+3. Build Machine Learning Models
+4. Create Portfolio Projects
+5. Deploy and Showcase Projects
 
-Interview Tips:
-- Practice SQL
-- Revise Machine Learning Concepts
-- Build Real-world Projects
+Interview Preparation Tips
+• Practice SQL and Python coding.
+• Explain your projects clearly.
+• Revise statistics and machine learning concepts.
 ```
 
 ---
 
-## Screenshots
+# Screenshots
 
-### Career Recommendation
+## 1. Career Recommendation
 
-(Add Screenshot 1 here)
+> Insert Screenshot 1 here
 
-### Data Scientist Roadmap
+![Career Recommendation](images/career_recommendation.png)
 
-(Add Screenshot 2 here)
+---
 
-### Project Suggestions
+## 2. AI Engineer Skill Gap Analysis
 
-(Add Screenshot 3 here)
+> Insert Screenshot 2 here
+
+![Skill Gap Analysis](images/skill_gap_analysis.png)
+
+---
+
+## 3. Project Recommendations
+
+> Insert Screenshot 3 here
+
+![Project Suggestions](images/project_recommendations.png)
+
+---
+
+## Future Improvements
+
+- Streamlit Web Interface
+- Resume Upload Support
+- PDF Career Report Generation
+- Course Recommendations
+- Multi-domain Career Guidance
+- User Authentication
+- Chat History Export
 
 ---
 
 ## Run the Project
 
-Install Ollama and pull the model:
+```bash
+ollama serve
+```
 
 ```bash
 ollama pull qwen2.5:7b
 ```
-
-Run the project:
 
 ```bash
 python Agent.py
@@ -133,21 +155,14 @@ python Agent.py
 
 ---
 
-## Future Improvements
-
-- Streamlit Web Interface
-- Resume Analyzer
-- Job Recommendation
-- Course Recommendation
-- PDF Report Generation
-- Vector Database Integration
-- RAG-based Career Guidance
-
----
-
 ## Author
 
 **Pramodha Reddy**
 
-GitHub:
-https://github.com/Pramodhaprogrammer
+GitHub: https://github.com/Pramodhaprogrammer
+
+---
+
+## License
+
+This project is developed for learning, portfolio, and educational purposes.
