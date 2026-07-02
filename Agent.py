@@ -3,7 +3,8 @@ from langchain_ollama import OllamaLLM
 llm = OllamaLLM(
     model="qwen2.5:7b",
     temperature=0,
-    num_predict=400
+    num_predict=300,
+    stop=["Student:"]
 )
 print("=" * 40)
 print(" AI Career Guidance Agent")
@@ -57,13 +58,11 @@ For Data Scientist prioritize:
 - Model Deployment
 
 For Data Analyst prioritize:
-- SQL
-- Excel
-- Power BI
 - Statistics
-- Python
-- Data Cleaning
-- Data Visualization
+- Pandas
+- NumPy
+- Scikit-Learn
+- Machine Learning
 
 For AI Engineer prioritize:
 - Python
@@ -93,14 +92,33 @@ Project Rules:
   - Loan Risk Prediction
   - AI Interview Preparation Agent
 - Avoid generic beginner projects unless highly relevant.
+- Every project must have a unique Project Name.
+- Never write only "Project 1".
+- Keep descriptions to one sentence.
 
 Roadmap Rules:
 
-Provide exactly 5 learning steps.
+## Learning Roadmap
 
-Interview Tips Rules:
+Provide exactly 5 numbered learning steps based on the student's current skills and recommended career.
 
-Provide exactly 3 concise interview tips.
+Format:
+
+1. <one concise learning step>
+2. <one concise learning step>
+3. <one concise learning step>
+4. <one concise learning step>
+5. <one concise learning step>
+
+Rules:
+- Provide exactly 5 steps.
+- Keep each step under 15 words.
+- Tailor the roadmap to the recommended career.
+- Do not repeat the student's known skills.
+- Arrange the steps from beginner to advanced.
+- Focus on learning missing skills first.
+- Mention relevant tools or technologies only when appropriate.
+- End with a portfolio or deployment step when relevant.
 
 Conversation Memory Rules:
 
@@ -123,35 +141,63 @@ For complete career-related questions, ALWAYS generate the response in the follo
 - Reason:
 
 ## Current Skills
-- List only known skills.
+- List skills exactly as mentioned by the student.
+- Never invent additional skills.
 
 ## Missing Skills
-- List only genuinely missing skills.
+- Never repeat known skills.
+- List only skills required for the recommended role.
+- Maximum 6 missing skills.
 
 ## Suggested Projects
-Project 1
-- Description
-- Tools Used
 
-Project 2
-- Description
-- Tools Used
+Suggest exactly 3 real-world portfolio projects.
 
-Project 3
-- Description
-- Tools Used
+For each project use the following format exactly:
 
-## Learning Roadmap
-1.
-2.
-3.
-4.
-5.
+### Project 1
+- Project Name: <meaningful project name>
+- Description: <one concise sentence explaining the project>
+- Tools Used: <Python, SQL, Pandas, NumPy, Scikit-Learn, Power BI, LangChain, Ollama, etc.>
+
+### Project 2
+- Project Name: <meaningful project name>
+- Description: <one concise sentence explaining the project>
+- Tools Used: <relevant tools>
+
+### Project 3
+- Project Name: <meaningful project name>
+- Description: <one concise sentence explaining the project>
+- Tools Used: <relevant tools>
+
+Rules:
+- Never leave the Project Name blank.
+- Never output only "Project 1", "Project 2", or "Project 3".
+- Every project must have a unique and realistic project name.
+- Recommend projects based on the student's target career.
+- Prefer resume-worthy, real-world projects over beginner projects.
+- Keep each description under 20 words.
+- Leave one blank line between sections.
+- Use Markdown headings (##).
+- Keep the output clean and professional.
+- Avoid long paragraphs.
 
 ## Interview Preparation Tips
-- Tip 1
-- Tip 2
-- Tip 3
+
+Provide exactly 3 interview preparation tips based on the student's target career and current skills.
+
+Format:
+
+- Tip 1: <one concise sentence>
+- Tip 2: <one concise sentence>
+- Tip 3: <one concise sentence>
+
+Rules:
+- Keep each tip under 15 words.
+- Focus on technical interviews, projects, and problem-solving.
+- Tailor the tips to the recommended career.
+- Do not repeat information from the roadmap.
+- Mention Python, SQL, Machine Learning, Power BI, Statistics, or Data Structures only when relevant.
 """
 
 while True:
@@ -167,7 +213,7 @@ while True:
     history.append(f"Student: {user}")
 
     # Keep only last 4 conversation messages
-    history = history[-6:]
+    history = history[-8:]
 
     prompt = f"""
 {SYSTEM_PROMPT}
@@ -179,13 +225,12 @@ AI:
 """
 
     try:
-        response = llm.invoke(prompt)
-
-        print("\nAI:\n")
-        print(response)
-
-        history.append(f"AI: {response}")
-        history = history[-4:]
+       response = llm.invoke(prompt)
+       response = response.strip()
+       print("\nAI:\n")
+       print(response)
+       history.append(f"AI: {response}")
+       history = history[-8:]
 
     except Exception as e:
         print(f"\nError: {e}")
